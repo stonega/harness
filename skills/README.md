@@ -56,6 +56,20 @@ Install command:
 npx skills add https://github.com/stonega/harness --skill new-project
 ```
 
+### `save-harness`
+
+Purpose:
+- Save reusable harness assets into this repo
+- Route skills to `skills/` and prompts to `prompts/`
+
+Path: [`skills/save-harness/`](./save-harness/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill save-harness
+```
+
 ### `write-a-skill`
 
 Purpose:
@@ -101,6 +115,20 @@ Install command:
 
 ```bash
 npx skills add https://github.com/kepano/obsidian-skills.git
+```
+
+### `agent-browser`
+
+Source: `https://github.com/vercel-labs/agent-browser`
+
+Purpose:
+- Add browser automation workflows for agent-driven web interaction
+- Support navigation, form filling, clicking, screenshots, scraping, and web app testing
+
+Install command:
+
+```bash
+npx skills add vercel-labs/agent-browser
 ```
 
 ## Maintenance Notes
