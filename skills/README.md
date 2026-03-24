@@ -12,12 +12,63 @@ It also tracks a few skills installed from external sources so there is one plac
 
 These skills live under [`skills/`](./) and are versioned with this repository.
 
-| Skill | Purpose | Path |
-| --- | --- | --- |
-| `daily` | Personal daily-news workflow. The current draft is lightweight and should likely be expanded before relying on it. | [`skills/daily/`](./daily/) |
-| `design-an-interface` | Generate multiple interface designs and compare them before choosing one. | [`skills/design-an-interface/`](./design-an-interface/) |
-| `new-project` | Bootstrap a new project from this harness with repo layout, `AGENTS.md`, starter docs, and the default stack. | [`skills/new-project/`](./new-project/) |
-| `write-a-skill` | Draft new skills with a clearer structure, references, and progressive disclosure. | [`skills/write-a-skill/`](./write-a-skill/) |
+Repository source: `https://github.com/stonega/harness`
+
+### `daily`
+
+Purpose:
+- Personal daily-news workflow
+- Current draft is lightweight and should likely be expanded before relying on it
+
+Path: [`skills/daily/`](./daily/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill daily
+```
+
+### `design-an-interface`
+
+Purpose:
+- Generate multiple interface designs before committing to one
+- Compare alternative module or API shapes
+
+Path: [`skills/design-an-interface/`](./design-an-interface/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill design-an-interface
+```
+
+### `new-project`
+
+Purpose:
+- Bootstrap a new project from this harness
+- Set up repo layout, `AGENTS.md`, starter docs, and the default stack
+
+Path: [`skills/new-project/`](./new-project/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill new-project
+```
+
+### `write-a-skill`
+
+Purpose:
+- Draft new skills with clearer structure
+- Encourage references and progressive disclosure
+
+Path: [`skills/write-a-skill/`](./write-a-skill/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill write-a-skill
+```
 
 ## External Skills
 
