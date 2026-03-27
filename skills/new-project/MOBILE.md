@@ -27,6 +27,10 @@ Styling baseline:
 - `uniwind`
 - `tailwindcss`
 
+Data fetching:
+
+- `@tanstack/react-query`
+
 When the chosen Uniwind tier requires native support:
 
 - `react-native-reanimated`
@@ -37,6 +41,7 @@ When the chosen Uniwind tier requires native support:
 
 - Prefer Expo for all new mobile projects in this harness.
 - Prefer Biome as the default formatter and linter for new mobile projects.
+- Prefer TanStack Query as the default data fetching and server-state package for new mobile projects.
 - Uniwind only supports Tailwind CSS v4.
 - Keep `global.css` at the project root unless there is a strong reason not to.
 - Import `global.css` from the main app component or root layout, not the root registration file.
@@ -45,6 +50,7 @@ When the chosen Uniwind tier requires native support:
 
 ## Source links
 
+- TanStack Query React Native guide: https://tanstack.com/query/latest/docs/framework/react/react-native
 - Uniwind introduction: https://docs.uniwind.dev/
 - Uniwind quickstart: https://docs.uniwind.dev/quickstart
 - Uniwind FAQ: https://docs.uniwind.dev/faq
