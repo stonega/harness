@@ -42,6 +42,20 @@ Install command:
 npx skills add https://github.com/stonega/harness --skill design-an-interface
 ```
 
+### `deep-review`
+
+Purpose:
+- Perform a thorough, high-effort review and testing pass
+- Favor long-term correctness, maintainability, and design quality over quick heuristics
+
+Path: [`skills/deep-review/`](./deep-review/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill deep-review
+```
+
 ### `new-project`
 
 Purpose:
