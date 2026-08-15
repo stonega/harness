@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router v7, Hono, Cloudflare, Ink, monorepos, standalone apps, or "start a new project" without a fully specified setup.
+description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router v7, Hono, Cloudflare, Ink, theme-aware TUIs, monorepos, standalone apps, or "start a new project" without a fully specified setup.
 ---
 
 # New Project
@@ -9,9 +9,9 @@ description: Bootstrap a new project from this harness, including repo layout, p
 
 Turn a rough product request into an initialized repo with a justified layout, a project-specific `AGENTS.md`, starter docs, a minimal default stack, and Biome as the default linter/formatter unless the user asked for alternatives.
 
-Defaults: Bun for package management and workspaces, Biome for linting and formatting, React Router v7 for web, Expo for mobile, Hono for backend, Cloudflare for deployment, and Ink for TUI.
+Defaults: Bun for package management and workspaces, Biome for linting and formatting, React Router v7 for web, Expo for mobile, Hono for backend, Cloudflare for deployment, and Bun + Ink with theme awareness for TUI.
 
-Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mobile apps.
+Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mobile apps. Read [TUI.md](TUI.md) only for terminal interfaces.
 
 ## Workflow
 
@@ -33,7 +33,7 @@ Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mo
    - Mobile: Expo.
    - Web + backend: separate apps in one repo.
    - Web + mobile + backend: `apps/web`, `apps/mobile`, `apps/backend`.
-   - TUI: add Ink only when the user actually needs it.
+   - TUI: use Bun + Ink and make the interface theme-aware.
 6. Write docs immediately.
    - Add `docs/design/architecture.md` with structure and rationale.
    - Add `docs/implementation/setup.md` with bootstrap and local-dev notes.
@@ -45,6 +45,7 @@ Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mo
 8. Apply stack-specific defaults only where needed.
    - Use [WEB.md](WEB.md) for web packages and setup.
    - Use [MOBILE.md](MOBILE.md) for mobile packages and setup.
+   - Use [TUI.md](TUI.md) for Bun + Ink packages, executable setup, terminal theming, and tests.
 
 ## Expected output
 
