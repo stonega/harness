@@ -14,20 +14,6 @@ These skills live under [`skills/`](./) and are versioned with this repository.
 
 Repository source: `https://github.com/stonega/harness`
 
-### `daily`
-
-Purpose:
-- Personal daily-news workflow
-- Current draft is lightweight and should likely be expanded before relying on it
-
-Path: [`skills/daily/`](./daily/)
-
-Install command:
-
-```bash
-npx skills add https://github.com/stonega/harness --skill daily
-```
-
 ### `design-an-interface`
 
 Purpose:
@@ -56,6 +42,20 @@ Install command:
 npx skills add https://github.com/stonega/harness --skill deep-review
 ```
 
+### `live-system-chrome`
+
+Purpose:
+- Verify local web applications in the user's existing Chrome profile
+- Reuse the active browser's tabs, authentication, and rendered state safely
+
+Path: [`skills/live-system-chrome/`](./live-system-chrome/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill live-system-chrome
+```
+
 ### `new-project`
 
 Purpose:
@@ -68,6 +68,20 @@ Install command:
 
 ```bash
 npx skills add https://github.com/stonega/harness --skill new-project
+```
+
+### `read-github-repo`
+
+Purpose:
+- Read GitHub repository links from a temporary local clone
+- Resolve linked revisions, paths, and line anchors before tracing surrounding code
+
+Path: [`skills/read-github-repo/`](./read-github-repo/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill read-github-repo
 ```
 
 ### `save-harness`
