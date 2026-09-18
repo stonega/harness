@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router v7, Hono, Cloudflare, Ink, theme-aware TUIs, monorepos, standalone apps, or "start a new project" without a fully specified setup.
+description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router, Hono, Cloudflare, Ink, theme-aware TUIs, monorepos, standalone apps, or "start a new project" without a fully specified setup.
 ---
 
 # New Project
