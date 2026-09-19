@@ -28,7 +28,7 @@ Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mo
    - For monorepos, use `apps/` for deployable apps and `packages/` for shared code.
 4. Initialize Bun first, add Biome, and keep dependencies explicit.
 5. Choose the scaffold by surface.
-   - Web: React Router v7.
+   - Web: React Router Latest.
    - Backend: Hono on Cloudflare.
    - Mobile: Expo.
    - Web + backend: separate apps in one repo.
@@ -61,3 +61,8 @@ Monorepo: `AGENTS.md`, `README.md`, `apps/`, `packages/`, `docs/`, `scripts/`, `
 - Prefer standalone unless multiple independently deployed surfaces are clearly needed.
 - Keep generated `AGENTS.md` aligned with the actual repo structure.
 - Create documentation and tests as part of setup, not as a later cleanup pass.
+
+## Tracer Bullets
+
+When building features, build a tiny, end-to-end slice of the feature first, seek feedback, then expand out from there.
+Tracer bullets comes from the Pragmatic Programmer. When building systems, you want to write code that gets you feedback as quickly as possible. Tracer bullets are small slices of functionality that go through all layers of the system, allowing you to test and validate your approach early. This helps in identifying potential issues and ensures that the overall architecture is sound before investing significant time in development.
