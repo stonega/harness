@@ -61,8 +61,3 @@ Monorepo: `AGENTS.md`, `README.md`, `apps/`, `packages/`, `docs/`, `scripts/`, `
 - Prefer standalone unless multiple independently deployed surfaces are clearly needed.
 - Keep generated `AGENTS.md` aligned with the actual repo structure.
 - Create documentation and tests as part of setup, not as a later cleanup pass.
-
-## Tracer Bullets
-
-When building features, build a tiny, end-to-end slice of the feature first, seek feedback, then expand out from there.
-Tracer bullets comes from the Pragmatic Programmer. When building systems, you want to write code that gets you feedback as quickly as possible. Tracer bullets are small slices of functionality that go through all layers of the system, allowing you to test and validate your approach early. This helps in identifying potential issues and ensures that the overall architecture is sound before investing significant time in development.
