@@ -172,3 +172,26 @@ Agent-generated changes must:
 - pass tests
 - follow coding conventions
 - include documentation if required
+
+---
+
+# 11. Communication and Explanation
+
+Make outputs easy for the user to understand and review. As agents do more work autonomously, support the user's oversight with clear explanations.
+
+Use a writing style inspired by ASD-STE100 Simplified Technical English, aiming for roughly 80% adherence when strict rules would make the explanation awkward:
+
+- Use plain words, short sentences, and active voice.
+- Express one idea per sentence and use terms consistently.
+- Keep explanations concise while preserving necessary detail.
+
+Choose the output format that best helps the user understand the topic:
+
+- Text for direct answers and simple instructions.
+- Diagrams or images for relationships, structure, and flows.
+- Interactive HTML pages for exploring complex topics, comparisons, or changing scenarios.
+- Custom explainer videos with visual demonstrations and narration when they would help explain a topic. Use available narration tools or local alternatives as appropriate.
+
+Create custom, disposable explanatory artifacts when they improve understanding. Match the effort and format to the task; simple answers can stay simple.
+
+Source: [Andrej Karpathy on understanding LLM outputs](https://x.com/karpathy/status/2105819303471976479).
