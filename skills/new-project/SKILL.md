@@ -46,10 +46,15 @@ Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mo
    - Use [WEB.md](WEB.md) for web packages and setup.
    - Use [MOBILE.md](MOBILE.md) for mobile packages and setup.
    - Use [TUI.md](TUI.md) for Bun + Ink packages, executable setup, terminal theming, and tests.
+9. Initialize Git and create the first commit after setup.
+   - Run the project's checks and ensure `.gitignore` excludes dependencies, build outputs, and local environment files before staging.
+   - Run `git init` in the new project root unless it already has its own Git repository; reuse a repository created by the scaffold.
+   - Stage the project files, review the staged changes, and run `git commit -m "Initial commit"`. If the scaffold already created a commit, commit any remaining setup changes without rewriting history.
+   - Verify the working tree is clean and report the resulting commit hash. If the commit cannot be completed, report the blocker.
 
 ## Expected output
 
-Leave the repo with a coherent layout, a project-specific `AGENTS.md`, starter docs, a runnable README, and minimal dependencies.
+Leave the repo with a coherent layout, a project-specific `AGENTS.md`, starter docs, a runnable README, minimal dependencies, and the completed setup committed to Git.
 
 ## Default layouts
 
