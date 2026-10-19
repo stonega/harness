@@ -32,6 +32,8 @@ Agents must preserve this structure.
 
 # 2. Development Workflow
 
+Before adding a new feature or UI, ask for and receive the user's confirmation unless the user has explicitly requested or specified that addition.
+
 Agents must follow this workflow when implementing features.
 
 1. Read relevant documents in:
