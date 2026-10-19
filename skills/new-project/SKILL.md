@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router, Hono, Cloudflare, Ink, theme-aware TUIs, GNOME Shell extensions, monorepos, standalone apps, or "start a new project" without a fully specified setup.
+description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router, Hono, Cloudflare, Ink, theme-aware TUIs, native GNOME apps, GNOME Shell extensions, monorepos, standalone apps, or "start a new project" without a fully specified setup.
 ---
 
 # New Project
@@ -9,11 +9,11 @@ description: Bootstrap a new project from this harness, including repo layout, p
 
 Turn a rough product request into an initialized repo with a justified layout, a project-specific `AGENTS.md`, starter docs, a minimal default stack, and Biome as the default linter/formatter unless the user asked for alternatives.
 
-Defaults: Bun for package management and workspaces, Biome for linting and formatting, React Router v7 for web, Expo for mobile, Hono for backend, Cloudflare for deployment, and Bun + Ink with theme awareness for TUI.
+Defaults: Bun for package management and workspaces, Biome for linting and formatting, React Router v7 for web, Expo for mobile, Hono for backend, Cloudflare for deployment, Bun + Ink with theme awareness for TUI, and GJS + GTK 4 + libadwaita for native GNOME apps.
 
-Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mobile apps. Read [TUI.md](TUI.md) only for terminal interfaces.
+Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mobile apps. Read [TUI.md](TUI.md) only for terminal interfaces. Read [GNOME.md](GNOME.md) only for native GNOME apps or GNOME Shell extensions.
 
-For projects with a user interface, read [design.md](design.md) before planning screens or choosing UI patterns. Adapt the applicable preferences into `docs/design/ui-rules.md` and link it from the generated `AGENTS.md`.
+For projects with a user interface, read [design.md](DESIGN.md) before planning screens or choosing UI patterns. Adapt the applicable preferences into `docs/design/ui-rules.md` and link it from the generated `AGENTS.md`.
 
 ## Workflow
 
@@ -24,12 +24,12 @@ For projects with a user interface, read [design.md](design.md) before planning 
 2. Build `AGENTS.md` before the rest of the repo.
    - First fetch `https://raw.githubusercontent.com/stonega/harness/refs/heads/main/_AGENTS.md`.
    - Adapt it to the actual project structure, commands, and testing workflow.
-   - For GNOME Shell extensions with panel menus, include the popup alignment rules below.
+   - For GNOME Shell extensions with panel menus, include the [popup alignment rules](GNOME.md#panel-menu-popup-alignment).
    - If the remote file is unavailable, use the local harness copy and say so.
 3. Create the base structure.
    - Always create `README.md`, `AGENTS.md`, `docs/design`, `docs/implementation`, `docs/user`, `scripts`, `examples`, and `postmortem`.
    - For monorepos, use `apps/` for deployable apps and `packages/` for shared code.
-4. Initialize Bun first, add Biome, and keep dependencies explicit.
+4. Initialize Bun first, add Biome, and keep dependencies explicit. For GNOME projects, use Bun for development tooling; native apps run with GJS and extensions load inside GNOME Shell.
 5. Choose the scaffold by surface.
    - Web: React Router Latest.
    - Backend: Hono on Cloudflare.
@@ -37,6 +37,8 @@ For projects with a user interface, read [design.md](design.md) before planning 
    - Web + backend: separate apps in one repo.
    - Web + mobile + backend: `apps/web`, `apps/mobile`, `apps/backend`.
    - TUI: use Bun + Ink and make the interface theme-aware.
+   - GNOME app: use GJS ES modules with GTK 4 and libadwaita; add a Shell extension only when desktop integration requires it.
+   - GNOME Shell extension: follow [GNOME.md](GNOME.md) for extension metadata, lifecycle, and isolated testing; add a GTK app only when the product needs one.
 6. Write docs immediately.
    - Add `docs/design/architecture.md` with structure and rationale.
    - Add `docs/implementation/setup.md` with bootstrap and local-dev notes.
@@ -49,6 +51,7 @@ For projects with a user interface, read [design.md](design.md) before planning 
    - Use [WEB.md](WEB.md) for web packages and setup.
    - Use [MOBILE.md](MOBILE.md) for mobile packages and setup.
    - Use [TUI.md](TUI.md) for Bun + Ink packages, executable setup, terminal theming, and tests.
+   - Use [GNOME.md](GNOME.md) for native runtime dependencies, desktop integration, Meson installation, and isolated GNOME tests.
 9. Initialize Git and create the first commit after setup.
    - Run the project's checks and ensure `.gitignore` excludes dependencies, build outputs, and local environment files before staging.
    - Run `git init` in the new project root unless it already has its own Git repository; reuse a repository created by the scaffold.
@@ -63,12 +66,6 @@ Leave the repo with a coherent layout, a project-specific `AGENTS.md`, starter d
 
 Standalone: `AGENTS.md`, `README.md`, `docs/`, `src/`, `tests/`, `scripts/`, `examples/`, `postmortem/`
 Monorepo: `AGENTS.md`, `README.md`, `apps/`, `packages/`, `docs/`, `scripts/`, `examples/`, `postmortem/`
-
-## GNOME Shell extension popup alignment
-
-- Center a panel menu popup horizontally beneath the panel button that opened it: the popup's horizontal midpoint should match the button's horizontal midpoint whenever space allows. Use the full clickable button, including any icon and status text, as the anchor.
-- Use GNOME Shell's popup positioning facilities instead of fixed pixel offsets. Keep the popup within the current monitor's usable bounds, allowing edge clamping when exact centering would put it offscreen.
-- Verify alignment with the actual panel button contents, including changing status text, and with the button near a monitor edge.
 
 ## Rules
 
