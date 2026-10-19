@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router, Hono, Cloudflare, Ink, theme-aware TUIs, monorepos, standalone apps, or "start a new project" without a fully specified setup.
+description: Bootstrap a new project from this harness, including repo layout, project-specific AGENTS instructions, starter documentation, and the default app stack. Use whenever the user wants to create, scaffold, initialize, or structure a new repo, especially when they mention Bun, Expo, React Router, Hono, Cloudflare, Ink, theme-aware TUIs, GNOME Shell extensions, monorepos, standalone apps, or "start a new project" without a fully specified setup.
 ---
 
 # New Project
@@ -22,6 +22,7 @@ Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mo
 2. Build `AGENTS.md` before the rest of the repo.
    - First fetch `https://raw.githubusercontent.com/stonega/harness/refs/heads/main/_AGENTS.md`.
    - Adapt it to the actual project structure, commands, and testing workflow.
+   - For GNOME Shell extensions with panel menus, include the popup alignment rules below.
    - If the remote file is unavailable, use the local harness copy and say so.
 3. Create the base structure.
    - Always create `README.md`, `AGENTS.md`, `docs/design`, `docs/implementation`, `docs/user`, `scripts`, `examples`, and `postmortem`.
@@ -60,6 +61,12 @@ Leave the repo with a coherent layout, a project-specific `AGENTS.md`, starter d
 
 Standalone: `AGENTS.md`, `README.md`, `docs/`, `src/`, `tests/`, `scripts/`, `examples/`, `postmortem/`
 Monorepo: `AGENTS.md`, `README.md`, `apps/`, `packages/`, `docs/`, `scripts/`, `examples/`, `postmortem/`
+
+## GNOME Shell extension popup alignment
+
+- Center a panel menu popup horizontally beneath the panel button that opened it: the popup's horizontal midpoint should match the button's horizontal midpoint whenever space allows. Use the full clickable button, including any icon and status text, as the anchor.
+- Use GNOME Shell's popup positioning facilities instead of fixed pixel offsets. Keep the popup within the current monitor's usable bounds, allowing edge clamping when exact centering would put it offscreen.
+- Verify alignment with the actual panel button contents, including changing status text, and with the button near a monitor edge.
 
 ## Rules
 
