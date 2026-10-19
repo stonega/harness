@@ -13,6 +13,8 @@ Defaults: Bun for package management and workspaces, Biome for linting and forma
 
 Read [WEB.md](WEB.md) only for web apps. Read [MOBILE.md](MOBILE.md) only for mobile apps. Read [TUI.md](TUI.md) only for terminal interfaces.
 
+For projects with a user interface, read [design.md](design.md) before planning screens or choosing UI patterns. Adapt the applicable preferences into `docs/design/ui-rules.md` and link it from the generated `AGENTS.md`.
+
 ## Workflow
 
 1. Infer the smallest viable shape.
