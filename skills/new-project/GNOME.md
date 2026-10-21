@@ -137,8 +137,12 @@ outside Biome's web CSS parser; verify it by loading it in GTK.
 
 - Run `bun run check` and `bun test` for the generated model and scripts. Keep the
   Bun suite free of imports that require GJS.
-- Run a native smoke test with actual GJS/GTK widgets for window startup, important
-  interactions, persistence, and native integrations. Use a separate test
+- Run UI tests in an isolated virtual GNOME desktop, using a headless/nested
+  GNOME Shell session or a disposable GNOME VM. Launch the app and its UI test
+  tools inside that session. Document a repeatable test command and the required
+  environment in the generated `AGENTS.md` and setup guide.
+- Exercise actual GJS/GTK widgets for window startup, important interactions,
+  persistence, and native integrations in that virtual desktop. Use a separate test
   application ID, temporary XDG config/data/cache directories, and
   `GSETTINGS_BACKEND=memory` so tests leave the user's preferences untouched.
 - Isolate D-Bus when testing calls that control desktop services. Stub external
@@ -146,8 +150,11 @@ outside Biome's web CSS parser; verify it by loading it in GTK.
   session. Desktop changes belong to explicit product actions, never startup or
   tests against the user's session.
 - Check wide and narrow layouts, light and dark appearances, keyboard/focus
-  behavior, and relevant error states. Store useful screenshots and diagnostics
-  in an ignored artifacts directory. Report graphical checks that could not run.
+  behavior, and relevant error states. Capture and inspect screenshots from the
+  virtual desktop, and keep them with diagnostics in an ignored artifacts
+  directory. Report the session used, checks run, and any graphical checks that
+  could not run. Static checks and widget-only smoke tests do not replace virtual
+  GNOME desktop UI tests.
 - Verify the installed launcher from outside the checkout. Validate the desktop
   file with `desktop-file-validate` when available.
 
