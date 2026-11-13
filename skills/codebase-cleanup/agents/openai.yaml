@@ -1,0 +1,3 @@
+interface:
+  display_name: "Codebase Cleanup"
+  short_description: "Audit and reduce accumulated code and architecture debt"

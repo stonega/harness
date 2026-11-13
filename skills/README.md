@@ -14,6 +14,20 @@ These skills live under [`skills/`](./) and are versioned with this repository.
 
 Repository source: `https://github.com/stonega/harness`
 
+### `codebase-cleanup`
+
+Purpose:
+- Audit and reduce accumulated code, architecture, test, and documentation debt
+- Preserve behavior with evidence-based cleanup batches and resumable progress
+
+Path: [`skills/codebase-cleanup/`](./codebase-cleanup/)
+
+Install command:
+
+```bash
+npx skills add https://github.com/stonega/harness --skill codebase-cleanup
+```
+
 ### `design-an-interface`
 
 Purpose:
